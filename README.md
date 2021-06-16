@@ -6,13 +6,12 @@ This directory contains implementations of U-Net and multi-domain-U-Net for MRI 
 
 We have tested this code using:
 
-* Ubuntu 18.04
-* Python 3.8
-* CUDA 10.1
-* CUDNN 7.6.5
+* Ubuntu 16.04.6
+* Python 3.6.9
+* CUDA 10.2
 
 You can find the full list of Python packages needed to run the code in the `requirements.txt` file.
-To install the required packages, run
+To install them, run
 
 ```bash
 pip install -r requirements.txt
