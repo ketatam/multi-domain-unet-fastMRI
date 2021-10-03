@@ -1,10 +1,16 @@
 ## Multi Domain U-Net Model for MRI Reconstruction
 
-This directory contains implementations of U-Net and multi-domain-U-Net for MRI reconstruction in PyTorch.
+Welcome to the repository of my Bachelor's thesis at the Department of Electrical and Computer Engineering at [TUM](https://www.tum.de/en/). 
+My thesis was about "Data Standardization, Multi-Domain Learning and GRAPPA preprocessing for Improved MRI".
+To read a more detailed discussion see my [thesis]() and [final presentation]().
 
+This directory contains implementations of U-Net and multi-domain-U-Net for MRI reconstruction in PyTorch. It also contains 
+implementations of the different methods I used in my work, so that the reported results are easily reproducible.
+
+To visit the main page of the fastMRI challenge, please go [here](https://fastmri.org/).
 ## Dependencies and Installation
 
-We have tested this code using:
+I have tested this code using:
 
 * Ubuntu 16.04.6
 * Python 3.6.9
@@ -17,34 +23,11 @@ To install them, run
 pip install -r requirements.txt
 ```
 
-## U-Net
-To start training the model, run:
-```bash
-python models/unet/train_unet.py --mode train --challenge CHALLENGE --data-path DATA --exp unet --mask-type MASK_TYPE --standardize --apply-grappa
-```
-where `CHALLENGE` is either `singlecoil` or `multicoil`. And `MASK_TYPE` is either `random` (for knee)
-or `equispaced` (for brain). Also, add `--standardize` and `--apply-grappa`, if you want to use multi-channel data standardization and GRAPPA preprocessing, respectively. Training logs and checkpoints are saved in `experiments/unet` directory. 
+## Repository Structure
+This repository is structured as follows:
+* The directory `tutorials` contains three Jupyter notebooks that illustrate how to deal with the data and how to use the implemented methods.
+This is the best place to start.
+  
+* The other directory `data`, `common` and `models` contain the actual implementations of the model training pipeline. See
+the respective folders for a more detailed explanation.
 
-To run the model on test data:
-```bash
-python models/unet/train_unet.py --mode test --challenge CHALLENGE --data-path DATA --exp unet --out-dir reconstructions --checkpoint MODEL --standardize --apply-grappa
-```
-where `MODEL` is the path to the model checkpoint from `experiments/unet/version_0/checkpoints/`.
-
-The outputs will be saved to `reconstructions` directory which can be uploaded for submission.
-
-# Multi Domain U-Net
-To start training the model, run:
-```bash
-python models/unet/train_MD_unet.py --mode train --challenge CHALLENGE --data-path DATA --exp unet --mask-type MASK_TYPE --standardize --apply-grappa
-```
-where `CHALLENGE` is either `singlecoil` or `multicoil`. And `MASK_TYPE` is either `random` (for knee)
-or `equispaced` (for brain). Also, add `--standardize` and `--apply-grappa`, if you want to use multi-channel data standardization and GRAPPA preprocessing, respectively. Training logs and checkpoints are saved in `experiments_MD_unet/unet` directory. 
-
-To run the model on test data:
-```bash
-python models/unet/train_MD_unet.py --mode test --challenge CHALLENGE --data-path DATA --exp unet --out-dir reconstructions --checkpoint MODEL --standardize --apply-grappa
-```
-where `MODEL` is the path to the model checkpoint from `experiments/unet/version_0/checkpoints/`.
-
-The outputs will be saved to `reconstructions` directory which can be uploaded for submission.
