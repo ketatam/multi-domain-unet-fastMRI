@@ -28,6 +28,6 @@ This repository is structured as follows:
 * The directory `tutorials` contains three Jupyter notebooks that illustrate how to deal with the data and how to use the implemented methods.
 This is the best place to start.
   
-* The other directory `data`, `common` and `models` contain the actual implementations of the model training pipeline. See
+* The other directories `data`, `common` and `models` contain the actual implementations of the model training pipeline. See
 the respective folders for a more detailed explanation.
 
