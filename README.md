@@ -2,7 +2,7 @@
 
 Welcome to the repository of my Bachelor's thesis at the Department of Electrical and Computer Engineering at [TUM](https://www.tum.de/en/). 
 My thesis was about "Data Standardization, Multi-Domain Learning and GRAPPA preprocessing for Improved MRI".
-To read a more detailed discussion see my [thesis]() and [final presentation]().
+To read a more detailed discussion see my [thesis](https://github.com/ketatam/multi-domain-unet-fastMRI/blob/main/report_and_presentation/report.pdf) and [final presentation](https://github.com/ketatam/multi-domain-unet-fastMRI/blob/main/report_and_presentation/presentation.pdf).
 
 This directory contains implementations of U-Net and multi-domain-U-Net for MRI reconstruction in PyTorch. It also contains 
 implementations of the different methods I used in my work, so that the reported results are easily reproducible.
